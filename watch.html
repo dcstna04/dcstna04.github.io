@@ -4,120 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Harry Potter and the Sorcerer's Stone</title>
+    <title>Watch Harry Potter</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
-    <style>
-        body {
-            background-color: #141414;
-            color: #fff;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .movie-player {
-            max-width: 800px;
-            margin: auto;
-            margin-top: 50px;
-            background-color: #141414;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            /* 16:9 */
-            padding-top: 30px;
-            height: 0;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .movie-info {
-            padding: 20px;
-        }
-
-        .movie-title {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .movie-subtitle {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .movie-description {
-            font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .btn-play {
-            font-size: 18px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #e50914;
-            border-color: #e50914;
-            padding: 15px 30px;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-
-        .btn-play:hover {
-            background-color: #b2070f;
-            border-color: #b2070f;
-        }
-
-        .btn-add {
-            font-size: 18px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #333;
-            border-color: #333;
-            padding: 15px 30px;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-
-        .btn-add:hover {
-            background-color: #222;
-            border-color: #222;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="movie-player">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/VyHV0BRtdxo" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Watch Harry Potter</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Movies</a>
+                </li>
+            </ul>
         </div>
-        <div class="movie-info">
-            <h1 class="movie-title">Harry Potter and the Sorcerer's Stone</h1>
-            <p class="movie-subtitle">2001 | 2h 32min | Adventure, Family, Fantasy</p>
-            <p class="movie-description">Rescued from the outrageous neglect of his aunt and uncle, a young boy with a great destiny proves his worth while attending Hogwarts School of Witchcraft and Wizardry.</p>
-        <button class="btn btn-play">Play</button>
-        <button class="btn btn-add">Add to Watchlist</button>
-    </div>
-</div>
+    </nav>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi4jq7Y"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNS"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 col-sm-12">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video class="embed-responsive-item" id="videoPlayer" controls></video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi4jq7Y"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNS"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        // Get the video player element
+        var videoPlayer = document.getElementById('videoPlayer');
+        
+        // Request fullscreen mode when the video player is clicked
+        videoPlayer.addEventListener('click', function() {
+            if (videoPlayer.requestFullscreen) {
+                videoPlayer.requestFullscreen();
+        } else if (videoPlayer.webkitRequestFullscreen) { /* Safari */
+            videoPlayer.webkitRequestFullscreen();
+        } else if (videoPlayer.msRequestFullscreen) { /* IE11 */
+            videoPlayer.msRequestFullscreen();
+        }
+    });
+</script>
 </body>
 </html>
