@@ -4,14 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WWWMovie Player</title>
+    <title>Harry Potter Movie Player</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        /* Custom CSS for the player */
+        .movie-player {
+            max-width: 800px;
+            margin: auto;
+        }
+        .movie-player h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .movie-player .embed-responsive {
+            height: 0;
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .movie-player .embed-responsive iframe {
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-5">Watch [Movie Here]</h1>
+    <div class="container movie-player">
+        <h1 class="mb-5">Watch Harry Potter and the Philosopher's Stone</h1>
         <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lViNtLphYz0" allowfullscreen></iframe>
         </div>
