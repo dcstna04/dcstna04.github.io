@@ -4,86 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Harry Potter Movie Player</title>
-    <!-- Bootstrap CSS -->
+    <title>Harry Potter and the Sorcerer's Stone</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
     <style>
-        /* Custom CSS for the player */
+        body {
+            background-color: #141414;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
         .movie-player {
             max-width: 800px;
             margin: auto;
+            margin-top: 50px;
+            background-color: #141414;
+            border-radius: 5px;
+            overflow: hidden;
         }
-        .movie-player h1 {
-            font-size: 1.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        .movie-player .embed-responsive {
-            height: 0;
-            padding-bottom: 56.25%;
+
+        .video-container {
             position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            padding-top: 30px;
+            height: 0;
         }
-        .movie-player .embed-responsive iframe {
-            border: none;
+
+        .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
         }
-        .movie-player .yt-title {
-            font-size: 1.25rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
+
+        .movie-info {
+            padding: 20px;
         }
-        .movie-player .yt-subtitle {
-            font-size: 0.875rem;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
+
+        .movie-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
-        .movie-player .yt-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
+
+        .movie-subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
         }
-        .movie-player .yt-actions button {
-            border: none;
-            background: none;
-            color: #606060;
-            font-size: 0.875rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: color 0.2s ease-in-out;
-            padding: 0;
-            margin: 0;
+
+        .movie-description {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
-        .movie-player .yt-actions button:hover {
-            color: #000;
+
+        .btn-play {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #e50914;
+            border-color: #e50914;
+            padding: 15px 30px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .btn-play:hover {
+            background-color: #b2070f;
+            border-color: #b2070f;
+        }
+
+        .btn-add {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #333;
+            border-color: #333;
+            padding: 15px 30px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .btn-add:hover {
+            background-color: #222;
+            border-color: #222;
         }
     </style>
 </head>
 <body>
-    <div class="container movie-player">
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lViNtLphYz0" allowfullscreen></iframe>
+    <div class="movie-player">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/1g3_CFmnU7k" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         </div>
-        <div class="yt-details mt-4">
-            <h1 class="yt-title">Harry Potter and the Philosopher's Stone</h1>
-            <p class="yt-subtitle">Uploaded on Nov 11, 2021</p>
-            <div class="yt-actions">
-                <button>Like</button>
-                <button>Share</button>
-                <button>Add to Playlist</button>
-                <button>More</button>
-            </div>
-        </div>
+        <div class="movie-info">
+            <h1 class="movie-title">Harry Potter and the Sorcerer's Stone</h1>
+            <p class="movie-subtitle">2001 | 2h 32min | Adventure, Family, Fantasy</p>
+            <p class="movie-description">Rescued from the outrageous neglect of his aunt and uncle, a young boy with a great destiny proves his worth while attending Hogwarts School of Witchcraft and Wizardry.</p>
+        <button class="btn btn-play">Play</button>
+        <button class="btn btn-add">Add to Watchlist</button>
     </div>
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi4jq7Y"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNS"
     crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
